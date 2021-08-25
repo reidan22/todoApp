@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <div class="container-fluid d-flex justify-content-center align-self-center account-header">
+        <div class="container-fluid row d-flex justify-content-center align-self-center">
+            <div class="col-6 align-self-center account-image">
+
+                <div class="container-fluid row d-flex justify-content-center profile-picture-format">
+                    <img class="" src="{{url_for('static',filename='resources/img/'+current_user.profile_image)}}">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="row d-flex-block justify-content-center align-self-center">
+                        <h1> {{current_user.fname}} {{current_user.lname}}</h1>
+                </div>
+                <div class="row d-flex justify-content-center ">
+                    <div class="col-6 d-flex justify-content-center align-self-center account-day">
+                        <h1 id="id-account-day"></h1>
+                    </div>
+                    <div class="col-6 align-self-center">
+                        <div class="row d-flex justify-content-center account-date">
+                            <p id="id-account-month"></p>&nbsp;&nbsp;&nbsp;
+                            <p id="id-account-date"></p>
+
+                        </div>
+                        <div class="row d-flex justify-content-center align-self-center account-year">
+                            <p id="id-account-year"></p>
+                        </div>
+                    </div>
+                    <div class="row d-flex-block justify-content-center align-self-center">
+                        <p><span id="id-account-time"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="row">
+    <div class="container account-tasks">
+        <div class="row account-tasks-header">
+            <div class="container-fluid d-flex justify-content-end">
+                <ul class="nav account-nav">
+                    <li class="nav-item account-setting text-center button-bi-user-update button-bi-user">
+                        <a href="{{ url_for('users.update',id= current_user.id) }}"><i class="bi-person-square "></i></a>
+                    </li>
+                    <li class="nav-item account-setting text-center button-bi-user-delete button-bi-user">
+                        <a href="{{ url_for('users.delete',id= current_user.id) }}"><i class="bi-person-x-fill"></i></a>
+                    </li>
+                    <li class="nav-item account-setting text-center button-bi-list">
+                        <a href="#"><i class="bi-list"></i></a>
+                    </li>
+                    <li class="nav-item account-setting text-center button-bi-plus-square">
+                        <a href="#"><i class="bi-plus-square"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row account-tasks-list">
+            task1 task2 task3
+        </div>
+    </div>
+</div>
+<script src="/../static/resources/js/account.js"></script> 
+
+{% endblock %}
+

@@ -1,0 +1,49 @@
+{% extends "user_tasks.html" %}
+{% block changeBlock %}
+    <div class="container d-flex justify-content-center todo-form-all">
+        <div class="row ">
+            <div class="col form-offset-height add-task-all">
+                <div class="text-center">
+                    <span class="todo-text todo-text-login-form">Add Task</span>
+                </div>
+                <a href="{{ url_for('users.account',id= current_user.id,scroll='account-tasks') }}">
+                    <h1 class="x-icon add-task-offset">
+                        <i class="bi-x"></i>
+                    </h1>
+                </a>
+                <div class="d-flex justify-content-center todo-login-form todo-register-form" id="add-task-view">
+                    
+                    <form method="POST" action="" enctype="multipart/form-data" class="todo-form-register-edit">
+                        {{ form.hidden_tag() }}
+
+                            <div class="row">
+                                <div class="col">
+                                    {{ form.task_title.label(class="todo-reg-text") }} <br>
+                                    {{ form.task_title(class="todo-reg-text") }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    {{ form.task_details.label(class="todo-reg-text") }}<br>
+                                    {{ form.task_details(class="todo-reg-text") }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    {{ form.date_target.label(class="todo-reg-text") }}<br>
+                                    {{ form.date_target(class="todo-reg-text") }}
+                                </div>
+                            </div>
+                            <div class="row todo-submit todo-submit-register">
+                                <div class="d-flex justify-content-center col add-task-submit">
+                                    {{ form.submit(class="todo-submit-col") }}
+                                </div>
+                            <div>                                                    
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

@@ -1,0 +1,46 @@
+{% extends "user_tasks.html" %}
+{% block changeBlock %}
+    <div class="container d-flex justify-content-center todo-form-all">
+        <div class="align-self-center">
+
+            <!-- <div class="container-fluid row d-flex justify-content-center profile-picture-format">
+                <img class="" src="{{url_for('static',filename='resources/img/'+current_user.profile_image)}}">
+            </div> -->
+        </div>
+
+        <div class="row abc123">
+            <div class="col form-offset-height delete-all">
+                <div class="text-center">
+                    <span class="todo-text todo-text-login-form">Delete</span>
+                </div>
+                <a href="{{ url_for('users.account',id= current_user.id,scroll='account-tasks') }}">
+                    <h1 class="x-icon delete-offset">
+                        <i class="bi-x"></i>
+                    </h1>
+                </a>
+                <div class="d-flex justify-content-center todo-login-form todo-register-form">
+                    <form method="POST" class="todo-form-register-edit">
+                        {{ form.hidden_tag() }}
+                            <div class="row">
+                                <div class="col-6">
+                                    {{ form.password.label(class="todo-reg-text") }}<br>
+                                    {{ form.password(class="todo-reg-text") }}
+                                </div>
+                                <div class="col-6">
+                                    {{ form.password_confirm.label(class="todo-reg-text") }}<br>
+                                    {{ form.password_confirm(class="todo-reg-text") }}
+                                </div>
+                            </div>
+                            <div class="row todo-submit todo-submit-register">
+                                <div class="d-flex justify-content-center col">
+                                    {{ form.submit(class="todo-submit-col") }}
+                                </div>
+                            <div>                                                    
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

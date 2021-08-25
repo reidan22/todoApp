@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container d-flex justify-content-center todo-form-all">
+        <div class="row ">
+            <div class="col form-offset-height offset-form">
+                <div class="text-center">
+                    <span class="todo-text todo-text-login-form">Register</span>
+                </div>
+                <div class="d-flex justify-content-center todo-login-form todo-register-form">
+                    <form method="POST" class="todo-form-register-edit">
+                        {{ form.hidden_tag() }}
+                            <div class="row">
+                                <div class="col">
+                                    {{ form.email.label(class="todo-reg-text") }} <br>
+                                    {{ form.email(class="todo-reg-text") }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    {{ form.fname.label(class="todo-reg-text") }}<br>
+                                    {{ form.fname(class="todo-reg-text") }}
+                                </div>
+                                <div class="col-6">
+                                    {{ form.lname.label(class="todo-reg-text") }}<br>
+                                    {{ form.lname(class="todo-reg-text") }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    {{ form.password.label(class="todo-reg-text") }}<br>
+                                    {{ form.password(class="todo-reg-text") }}
+                                </div>
+                                <div class="col-6">
+                                    {{ form.password_confirm.label(class="todo-reg-text") }}<br>
+                                    {{ form.password_confirm(class="todo-reg-text") }}
+                                </div>
+                            </div>
+                            <div class="row todo-submit todo-submit-register">
+                                <div class="d-flex justify-content-center col">
+                                    {{ form.submit(class="todo-submit-col") }}
+                                </div>
+                            <div>                                                    
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
