@@ -1,0 +1,79 @@
+{% extends "account.html" %} {% block tasksBlock %}
+
+<div class="d-flex top-card">
+  {%for task in tasks.items %}
+  <!-- <h4>{{task.task_title}}</h4><br> -->
+  <div class="container d-flex justify-content-center flex-column row">
+    <!-- <form action="{{ url_for('todos.delete_task', task_id = task.id, id=task.user_id) }}" method="POST" class="zIndex"> -->
+    <div
+      class="container-fluid d-flex-block justify-content-center card-format"
+    >
+      <div class="row xxx">
+        <div
+          class="d-flex justify-content-start align-items-center text-center col-8 x"
+        >
+          <span>({{task.id}}) {{task.task_title}}</span>
+        </div>
+
+        <div class="d-flex align-items-center col-2 z">
+          <a
+            href="{{ url_for('todos.delete_task', task_id = task.id, id=task.user_id) }}"
+            class=""
+          >
+            {% set d = +(task.date_target - time_now).days %} {% if d > 3 %}
+            <p class="text-center"><i class="bi-x-circle-fill greeny"> </i></p>
+            {% elif d <= 3 and d > 0%}
+            <p class="text-center"><i class="bi-x-circle-fill yellowy"> </i></p>
+            {% elif d == 0 %}
+            <p class="text-center"><i class="bi-x-circle-fill orangey"> </i></p>
+            {% elif d < 0 %}
+            <p class="text-center"><i class="bi-x-circle-fill redy"> </i></p>
+            {% endif %}
+          </a>
+        </div>
+      </div>
+      <div
+        class="container-fluid d-flex justify-content-center align-items-center row ab"
+      >
+        <p>
+          <i class="bi-calendar-check"> </i>{{task.date_target.strftime("%a %b
+          %d,%Y")}}
+        </p>
+      </div>
+      <div class="row ac">
+        <p>{{task.task_details}}</p>
+      </div>
+      <div class="d-flex align-items-center row a"></div>
+    </div>
+    <!-- </form> -->
+  </div>
+  {%endfor%}
+</div>
+
+<div class="container page-nav">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-sm justify-content-center">
+      {% for page_num in tasks.iter_pages(left_edge =1, right_edge =1,
+      left_current =1, right_current =2) %} {% if tasks.page == page_num %}
+      <li class="page-todo disabled">
+        <a
+          class=""
+          href="{{ url_for('users.account',id= current_user.id,page=page_num) }}"
+          ><i class="bi-circle-fill"></i
+        ></a>
+      </li>
+
+      {% else %}
+      <li class="page-todo">
+        <a
+          class=""
+          href="{{ url_for('users.account',id= current_user.id,page=page_num) }}"
+          ><i class="bi-circle-fill"></i
+        ></a>
+      </li>
+      {% endif %} {%endfor%}
+    </ul>
+  </nav>
+  <div class="changeBlock">{% block changeBlock %} {% endblock %}</div>
+</div>
+{% endblock %}

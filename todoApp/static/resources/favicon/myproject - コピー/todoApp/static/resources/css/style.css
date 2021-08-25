@@ -1,0 +1,299 @@
+@font-face {
+    font-family: LogoTodo;
+    src: url("../fonts/LandasansMedium-ALJ6m.otf");
+  }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 25px;
+    font-weight: 200;
+  }
+
+.bg-pic {
+    /* background-image: url("/../static/resources/img/todo_main_bg_pic.jpg"); */
+    z-index:-5 ;
+    position: absolute;
+
+}
+.bg-pic img {
+    opacity: 0.75;
+    width: 100vw;
+    -webkit-mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0));
+    mask-image: linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,0));
+}
+  /* TO DO LOGO */
+.todo-bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:rgb(243, 239, 239);
+    -webkit-transition:1.5s ;
+    -moz-transition:1.5s ;
+    -ms-transition:1.5s ;
+    -o-transition:1.5s ;
+    transition:1.5s ;
+    display:absolute;
+    z-index: 5;
+}
+.todo-bg h1{
+    font-family: LogoTodo, "Courier New", Courier, monospace;
+    font-size: 250%;
+    color: rgb(0, 0, 0);
+    font-size: 50vw;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.todo-logo {
+    font-family: LogoTodo, "Courier New", Courier, monospace;
+    font-size: 250%;
+    color: rgb(0, 0, 0);
+}
+
+.todo-text {
+    font-family: LogoTodo, "Courier New", Courier, monospace;
+    font-size: 150%;
+    color: rgb(0, 0, 0);
+}
+
+.todo-logo:hover {
+    color: rgb(87, 87, 87);
+}
+
+.todo-nav-item li a {
+    font-size: 70%;
+    color: rgb(0, 0, 0);
+}
+
+.todo-nav-item li a:hover {
+    color: rgb(87, 87, 87);
+}
+.todo-form-all {
+    height: 75vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center; 
+     justify-content: center;
+}
+
+.todo-login-form {
+    position:relative;
+    top: -75px;
+    width: 450px;
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+   box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.2), 0 6px 20px 0 rgba(0,0, 0, 0.19);
+    z-index: 0;
+}
+
+.todo-register-form {
+    width: 750px;
+    height: 90%;
+}
+
+.todo-text-login-form{
+    position: relative;
+    font-size: 400%;
+    z-index: 1;
+}
+
+.todo-text-elem-from{
+    font-size: 50%;
+}
+
+.todo-form {
+    position: relative;
+    top: 75px;
+    left: 60px;
+}
+
+.todo-form-register-edit {
+    position: relative;
+    top: 55px;
+    width: 70%;
+}
+
+.todo-submit {
+    position: relative;
+    left: -60px;
+    top: 10px;
+}
+
+.todo-submit-register {
+    left: 0px;
+}
+
+.todo-submit-col{
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+    border-radius: 25px;
+    font-size: 75%;
+    width: 110px;
+}
+
+.todo-submit-col:hover{
+    color: white;
+    background-color: black;
+}
+
+.todo-reg-text{
+    font-size: 75%;
+    margin-bottom: -10px;
+}
+  /* -------- */
+
+  /* -------- */
+.profile-picture-format img{
+    height: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.2), 0 6px 20px 0 rgba(0,0, 0, 0.19);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.account-header{
+    height:350px;
+    background-color: rgb(255, 255, 255);
+    /* border-bottom: 2px solid black; */
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.2), 0 6px 20px 0 rgba(0,0, 0, 0.19);
+}
+
+/* .account-nav {
+    /* background-color: red; */
+/* } */
+.account-image{
+    border-right: 1px solid rgb(185, 185, 185);
+}
+
+.account-setting i{
+    color: black;
+}
+.account-setting{
+    background-color: rgb(255, 255, 255);
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius:100%;
+    -moz-border-radius:100%;
+    -ms-border-radius:100%;
+    -o-border-radius:100%;
+    border-radius:100%;
+    border: 1px solid rgb(185, 185, 185);
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.2), 0 6px 20px 0 rgba(0,0, 0, 0.19);
+    margin: 4px;
+    -webkit-transition:0.75s ;
+    -moz-transition:0.75s ;
+    -ms-transition:0.75s ;
+    -o-transition:0.75s ;
+    transition:0.75s ;
+}
+
+.account-setting:hover{
+    background-color: rgb(0, 0, 0);
+}
+
+.account-setting.button-bi-user-update:hover{
+    background-color: rgb(37, 118, 172);
+}
+
+.account-setting.button-bi-user-delete:hover{
+    background-color: rgb(172, 37, 37);
+}
+
+.account-setting.button-bi-list:hover{
+    background-color: rgb(153, 153, 153);
+}
+
+.account-setting.button-bi-plus-square:hover{
+    background-color: rgb(139, 218, 123);
+}
+
+
+.account-setting i:hover{
+    color: white;
+}
+
+.account-tasks{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    height:400px;
+    box-shadow: 0 4px 8px 0 rgba(0,0, 0, 0.2), 0 6px 20px 0 rgba(0,0, 0, 0.19);
+}
+
+.account-tasks-header{
+    background-color: rgb(151, 151, 151);
+    height: 50px;
+    
+}
+
+.account-tasks-list{
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+.account-day h1{
+    font-size: 120px;
+    color: rgb(185, 185, 185);
+    margin-left: 40px;
+}
+
+.account-date p, .account-year p{
+    font-size: 50px;
+    margin-bottom: -20px;
+    margin-top: -10px;
+}
+
+.button-bi-list-on {
+    background-color: black;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+
+.button-bi-list-on i{
+    color  : white;
+}
+
+.button-bi-user{
+    opacity: 0;
+}
+
+.button-bi-user-update:hover{
+    color: blue;
+}
+  /* -------- */
+
+.xxx {
+    background-color: red;
+    height: 20px;
+  }
+
+
+  /* -------- ABOUT -------- */
+.about-pic {
+    max-width: 20%;
+}
+  /* ---------------- */
+  
+.center-align-custom {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+  }
+
+  .test{
+      font-size: 12px;
+  }

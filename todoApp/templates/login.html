@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container d-flex justify-content-center text-center todo-form-all">
+        <div class="row form-offset-height offset-form">
+            <div class="col">
+                <span class="todo-text todo-text-login-form">Log in</span>
+                <div class="todo-login-form justify-content-center">
+                    <form method="POST" class="todo-form">
+                        {{ form.hidden_tag() }}
+                            <div class="row">
+                                <div class="col-2">
+                                    {{ form.email.label(class="d-flex justify-content-end ") }}
+                                    
+                                </div>
+                                <div class="col-10">
+                                    {{ form.email(class="d-flex justify-content-start") }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-2">
+                                    {{ form.password.label(class="d-flex justify-content-end") }}
+                                </div>
+                                <div class="col-10">
+                                    {{ form.password(class="d-flex justify-content-start") }}
+                                </div>
+                            </div>
+                            <div class="row todo-submit">
+                                <div class="col">
+                                    {{ form.submit(class="todo-submit-col") }}
+                                </div>
+                            <div>                                                    
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

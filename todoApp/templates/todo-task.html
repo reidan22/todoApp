@@ -1,0 +1,15 @@
+{% extends "account.html" %}
+{% block tasksBlock %}
+
+    <div class="card">
+        <div class="card-body">
+            {{user_id}}/{{task_id}}
+            <h4 class="card-title">{{ task_title }}</h4>
+            <h5>Target Date: {{date_target.strftime('%Y-%m-%d')}}</h5>
+            <p>{{task_details}}</p>
+        </div>
+    </div>
+    <!-- {%for t in task.items%}
+        <p>{{t.todo.user_id}}</p>
+    {%endfor%} -->
+{% endblock %}

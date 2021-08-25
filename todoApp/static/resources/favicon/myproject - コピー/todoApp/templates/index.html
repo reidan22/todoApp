@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="container d-flex justify-content-center">
+        <h1>Welcome to <span class="todo-text todo-text-login-form">todo.</span></h1>
+        {%if current_user.is_authenticated and defined %}
+            <a class="nav-link" href="#"></a>{{fname}}</a>
+        {% endif %}
+        
+    </div>
+{%block indexText%}
+{% endblock %}
+
+{% endblock %}
+
+  
+{% block navName %}
+<li class="nav-item">
+    <!-- <a class="nav-link" href="#"></a>{{fname}}</a> -->
+  </li>
+{% endblock %}
